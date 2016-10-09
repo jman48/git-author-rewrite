@@ -36,7 +36,7 @@ then
     export GIT_AUTHOR_NAME="$CORRECT_NAME"
     export GIT_AUTHOR_EMAIL="$CORRECT_EMAIL"
 fi
-' --tag-name-filter cat -- --branches --tagsi
+' --tag-name-filter cat -- --branches --tags
 
 unset OLD_EMAIL
 unset CORRECT_NAME
