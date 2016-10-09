@@ -21,7 +21,7 @@ elif [ -z "$1" || -z "$2" || -z "$3" ]
 else
     OLD_EMAIL=$1
     CORRECT_NAME=$2
-    CORRECT_EMAIL=@3
+    CORRECT_EMAIL=$3
 fi
 
 if [ "$GIT_COMMITTER_EMAIL" = "$OLD_EMAIL" ]
