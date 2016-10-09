@@ -2,9 +2,7 @@
 
 #Change the author of all previous git commits.
 
-git filter-branch -f --env-filter '
-
-if [ $# -eq 0]; then
+if [ $# -eq 0 ]; then
     echo "No arguments passed"
     OLD_EMAIL="john.armstrong@solnetsolutions.co.nz"
     CORRECT_NAME="John Armstrong"
@@ -22,6 +20,9 @@ else
     CORRECT_NAME=$2
     CORRECT_EMAIL=$3
 fi
+
+
+git filter-branch -f --env-filter '
 
 if [ "$GIT_COMMITTER_EMAIL" = "$OLD_EMAIL" ]
 then
