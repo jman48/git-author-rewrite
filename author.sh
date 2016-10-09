@@ -4,9 +4,9 @@
 
 if [ $# -eq 0 ]; then
     echo "No arguments passed"
-    OLD_EMAIL="john.armstrong@solnetsolutions.co.nz"
-    CORRECT_NAME="John Armstrong"
-    CORRECT_EMAIL="j.armstrong484@gmail.com"
+    export OLD_EMAIL="john.armstrong@solnetsolutions.co.nz"
+    export CORRECT_NAME="John Armstrong"
+    export CORRECT_EMAIL="j.armstrong484@gmail.com"
 
     echo "Using defaults:"
     echo "OLD_EMAIL=john.armstrong@solnetsolutions.co.nz"
@@ -17,9 +17,9 @@ elif [ -z "$1" ] || [ -z "$2" ] || [ -z "$3" ]; then
     echo "e.g ./author.sh old@email.com your-name new@email.com"
     exit 1
 else
-    OLD_EMAIL=$1
-    CORRECT_NAME=$2
-    CORRECT_EMAIL=$3
+    export OLD_EMAIL=$1
+    export CORRECT_NAME=$2
+    export CORRECT_EMAIL=$3
 fi
 
 
@@ -36,4 +36,8 @@ then
     export GIT_AUTHOR_NAME="$CORRECT_NAME"
     export GIT_AUTHOR_EMAIL="$CORRECT_EMAIL"
 fi
-' --tag-name-filter cat -- --branches --tags
+' --tag-name-filter cat -- --branches --tagsi
+
+unset OLD_EMAIL
+unset CORRECT_NAME
+unset CORRECT_EMAIL
