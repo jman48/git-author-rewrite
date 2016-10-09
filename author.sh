@@ -14,7 +14,7 @@ if [ $# -eq 0]; then
     echo "OLD_EMAIL=john.armstrong@solnetsolutions.co.nz"
     echo "CORRECT_NAME=John Armstrong"
     echo "CORRECT_EMAIL=j.armstrong484@gmail.com"
-elif [ -z "$1" || -z "$2" || -z "$3" ]; then
+elif [ -z "$1" ] || [ -z "$2" ] || [ -z "$3" ]; then
     echo "You need to provide a string for old email and new email."
     echo  e.g ./author.sh old@email.com your-name new@email.com"
 else
